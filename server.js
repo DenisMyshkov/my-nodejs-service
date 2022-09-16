@@ -4,14 +4,14 @@ const app = express();
 
 let status = "open";
 
-app.get('/', (req, res) => {
+app.get('/run', (req, res) => {
   // res.send('Hello from App Engine!');
   if (status == "closed") {
     res.send('Tests are already in progress.');
   }
   else {
     status = "closed";
-    shell.exec('cd ../webdriver-e2e-automation; ./kek-script', () => {status = "open"});
+    shell.exec('cd ../webdriver-e2e-automation; ./script2-copy', () => {status = "open"});
     res.send('Tests are running. You can find the result at http://34.168.199.237/');
   };  
 });
