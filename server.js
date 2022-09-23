@@ -11,7 +11,7 @@ app.get('/run', (req, res) => {
   }
   else {
     status = "closed";
-    shell.exec('cd ../webdriver-e2e-automation; ./script3', () => {status = "open"});
+    shell.exec('cd ../webdriver-e2e-automation; ./script', () => {status = "open"});
     res.send('Tests are running. You can find the result at http://34.168.199.237/');
   };  
 });
